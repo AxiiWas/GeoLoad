@@ -1,10 +1,10 @@
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     color: #333;
+    overflow: hidden; /* Prevents scrollbars from appearing during animation */
 }
 
 header {
@@ -12,10 +12,13 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
+    z-index: 1;
 }
 
 main {
     padding: 20px;
+    position: relative; /* For positioning of other content */
+    z-index: 1; /* Ensures content is above the background */
 }
 
 footer {
@@ -30,4 +33,38 @@ footer {
 
 h2 {
     color: #444;
+}
+
+/* Animated Wave Background */
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(45deg, #a3a4fc, #f8e71c); /* Pastel purple and yellow */
+    opacity: 0.6;
+    animation: waveAnimation 6s linear infinite;
+    z-index: 0;
+}
+
+.wave2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(45deg, #f8e71c, #a3a4fc); /* Reversed gradient for dynamic effect */
+    opacity: 0.3;
+    animation: waveAnimation 10s linear infinite;
+    z-index: 0;
 }
