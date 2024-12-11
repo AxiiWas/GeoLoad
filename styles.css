@@ -27,16 +27,7 @@ body {
     fill: url(#mountainGradient); /* Set gradient for mountains */
 }
 
-@keyframes waveAnimation {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-/* Animated Wave Background */
+/* Static Wave Background */
 .wave, .wave2 {
     position: absolute;
     top: 0;
@@ -48,14 +39,12 @@ body {
 .wave {
     background: #9b4dca; /* Nice purple wave */
     opacity: 0.6;
-    animation: waveAnimation 6s linear infinite;
     z-index: 0;
 }
 
 .wave2 {
     background: #9b4dca; /* Same purple wave for second layer */
     opacity: 0.3;
-    animation: waveAnimation 10s linear infinite;
     z-index: 0;
 }
 
@@ -132,4 +121,3 @@ p {
         <stop offset="100%" style="stop-color: #ffb04d; stop-opacity: 1" />
     </linearGradient>
 </defs>
-
