@@ -1,10 +1,16 @@
 /* Global Styles */
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
     color: #333;
     overflow: hidden; /* Prevents scrollbars from appearing during animation */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    position: relative;
+    background-color: #fff;
 }
 
 header {
@@ -45,12 +51,15 @@ h2 {
     }
 }
 
-.wave {
+.wave, .wave2 {
     position: absolute;
     top: 0;
     left: 0;
     width: 200%;
     height: 100%;
+}
+
+.wave {
     background: linear-gradient(45deg, #a3a4fc, #f8e71c); /* Pastel purple and yellow */
     opacity: 0.6;
     animation: waveAnimation 6s linear infinite;
@@ -58,11 +67,6 @@ h2 {
 }
 
 .wave2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
     background: linear-gradient(45deg, #f8e71c, #a3a4fc); /* Reversed gradient for dynamic effect */
     opacity: 0.3;
     animation: waveAnimation 10s linear infinite;
