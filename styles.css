@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     color: #333;
-    overflow: hidden; /* Prevents scrollbars from appearing during animation */
+    overflow: hidden; /* Prevents scrollbars from appearing */
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 }
 
 .mountains path {
-    fill: url(#mountainGradient); /* Set gradient for mountains */
+    fill: #ffb04d; /* Pastel orange color for mountains */
 }
 
 /* Static Wave Background */
@@ -37,7 +37,7 @@ body {
 }
 
 .wave {
-    background: #9b4dca; /* Nice purple wave */
+    background: #9b4dca; /* Purple wave */
     opacity: 0.6;
     z-index: 0;
 }
@@ -97,27 +97,3 @@ p {
         margin-bottom: 20px;
     }
 }
-
-/* Mountain Gradient */
-@keyframes backgroundAnimation {
-    0% {
-        background: linear-gradient(135deg, #f8a3c4, #7a5cd9);
-    }
-    50% {
-        background: linear-gradient(135deg, #7a5cd9, #f8a3c4);
-    }
-    100% {
-        background: linear-gradient(135deg, #f8a3c4, #7a5cd9);
-    }
-}
-
-.mountains path {
-    fill: url(#mountainGradient);
-}
-
-<defs>
-    <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color: #f8a3c4; stop-opacity: 1" />
-        <stop offset="100%" style="stop-color: #ffb04d; stop-opacity: 1" />
-    </linearGradient>
-</defs>
