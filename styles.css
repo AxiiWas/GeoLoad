@@ -10,20 +10,7 @@ html, body {
 body {
     font-family: Arial, sans-serif;
     position: relative;
-    background: linear-gradient(135deg, #7a5cd9, #f6a3c4); /* Fading purple and pastel orange background */
-    animation: backgroundAnimation 10s ease infinite;
-}
-
-@keyframes backgroundAnimation {
-    0% {
-        background: linear-gradient(135deg, #7a5cd9, #f6a3c4);
-    }
-    50% {
-        background: linear-gradient(135deg, #f6a3c4, #7a5cd9);
-    }
-    100% {
-        background: linear-gradient(135deg, #7a5cd9, #f6a3c4);
-    }
+    background: #ffffff; /* Set background to white */
 }
 
 /* SVG Mountain Background */
@@ -36,7 +23,10 @@ body {
     z-index: -1; /* Ensure mountains stay behind content */
 }
 
-/* Animated Wave Background */
+.mountains path {
+    fill: url(#mountainGradient); /* Set gradient for mountains */
+}
+
 @keyframes waveAnimation {
     0% {
         transform: translateX(0);
@@ -46,6 +36,7 @@ body {
     }
 }
 
+/* Animated Wave Background */
 .wave, .wave2 {
     position: absolute;
     top: 0;
@@ -55,14 +46,14 @@ body {
 }
 
 .wave {
-    background: linear-gradient(45deg, #a3a4fc, #f8e71c); /* Pastel purple and yellow */
+    background: #9b4dca; /* Nice purple wave */
     opacity: 0.6;
     animation: waveAnimation 6s linear infinite;
     z-index: 0;
 }
 
 .wave2 {
-    background: linear-gradient(45deg, #f8e71c, #a3a4fc); /* Reversed gradient for dynamic effect */
+    background: #9b4dca; /* Same purple wave for second layer */
     opacity: 0.3;
     animation: waveAnimation 10s linear infinite;
     z-index: 0;
@@ -117,3 +108,28 @@ p {
         margin-bottom: 20px;
     }
 }
+
+/* Mountain Gradient */
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #f8a3c4, #7a5cd9);
+    }
+    50% {
+        background: linear-gradient(135deg, #7a5cd9, #f8a3c4);
+    }
+    100% {
+        background: linear-gradient(135deg, #f8a3c4, #7a5cd9);
+    }
+}
+
+.mountains path {
+    fill: url(#mountainGradient);
+}
+
+<defs>
+    <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color: #f8a3c4; stop-opacity: 1" />
+        <stop offset="100%" style="stop-color: #ffb04d; stop-opacity: 1" />
+    </linearGradient>
+</defs>
+
