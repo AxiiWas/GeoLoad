@@ -72,3 +72,13 @@ h2 {
     animation: waveAnimation 10s linear infinite;
     z-index: 0;
 }
+
+/* Mountain SVG Background */
+.mountains {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure mountains stay behind content */
+}
