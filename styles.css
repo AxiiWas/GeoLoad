@@ -10,35 +10,30 @@ html, body {
 body {
     font-family: Arial, sans-serif;
     position: relative;
-    background-color: #fff;
+    background: linear-gradient(135deg, #7a5cd9, #f6a3c4); /* Fading purple and pastel orange background */
+    animation: backgroundAnimation 10s ease infinite;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    z-index: 1;
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #7a5cd9, #f6a3c4);
+    }
+    50% {
+        background: linear-gradient(135deg, #f6a3c4, #7a5cd9);
+    }
+    100% {
+        background: linear-gradient(135deg, #7a5cd9, #f6a3c4);
+    }
 }
 
-main {
-    padding: 20px;
-    position: relative; /* For positioning of other content */
-    z-index: 1; /* Ensures content is above the background */
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
+/* SVG Mountain Background */
+.mountains {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    bottom: 0;
-}
-
-h2 {
-    color: #444;
+    height: 100%;
+    z-index: -1; /* Ensure mountains stay behind content */
 }
 
 /* Animated Wave Background */
@@ -73,12 +68,52 @@ h2 {
     z-index: 0;
 }
 
-/* Mountain SVG Background */
-.mountains {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+/* Styling for Main Content */
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 100%;
-    z-index: -1; /* Ensure mountains stay behind content */
+    padding: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    width: 45%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.get-started {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+/* Text Styling */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 20px;
+    }
+    section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
